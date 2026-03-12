@@ -11,9 +11,11 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/top">Display Top Page Contents</RouterLink>
+        <RouterLink to="/error">Display Errpr Page Contents</RouterLink>
       </nav>
+
+      <div>Goto Sample Page</div>
     </div>
   </header>
 
