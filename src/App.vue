@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+const router = useRouter()
+
+const goToSample = () => {
+  router.push('/sample')
+}
 </script>
 
 <template>
@@ -15,7 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/error">Display Errpr Page Contents</RouterLink>
       </nav>
 
-      <div>Goto Sample Page</div>
+      <button @click="goToSample">Goto Sample Page</button>
     </div>
   </header>
 
