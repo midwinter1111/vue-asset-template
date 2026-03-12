@@ -10,21 +10,6 @@ const goToSample = () => {
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="!" />
-
-      <nav>
-        <RouterLink to="/top">Display Top Page Contents</RouterLink>
-        <RouterLink to="/error">Display Errpr Page Contents</RouterLink>
-      </nav>
-
-      <button @click="goToSample">Goto Sample Page</button>
-    </div>
-  </header>
-
   <RouterView />
 </template>
 

@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+
 defineProps<{
   msg: string
 }>()
+
+const router = useRouter()
+
+const goToSample = () => {
+  router.push('/sample')
+}
 </script>
 
 <template>
+  <header>
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  </header>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
@@ -12,6 +23,12 @@ defineProps<{
       <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
     </h3>
+    <nav>
+        <RouterLink to="/top">Display Top Page Contents</RouterLink>
+        <br/>
+        <RouterLink to="/error">Display Errpr Page Contents</RouterLink>
+      </nav>
+      <button @click="goToSample">Goto Sample Page</button>
   </div>
 </template>
 

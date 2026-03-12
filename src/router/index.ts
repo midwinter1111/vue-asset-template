@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TopPage from '../views/TopPage.vue';
 import ErrorPage from '../views/ErrorPage.vue';
 import SamplePage from '@/views/SamplePage.vue';
+import HelloWorld from '@/components/HelloWorld.vue';
 
 export enum APP_PATH {
   ROOT = '/',
@@ -21,6 +22,14 @@ export const SCREEN_ID = {
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: APP_PATH.ROOT,
+      component: HelloWorld,
+      meta: {
+        screenId: SCREEN_ID.ROOT,
+        title: 'ルートページ'
+      }
+    },
     {
       path: APP_PATH.TOP,
       component: TopPage,
