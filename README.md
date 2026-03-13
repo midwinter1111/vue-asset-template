@@ -7,7 +7,6 @@ Vite, Tailwind CSS v4, Storybook, Vitest などの最新スタックを利用し
 
 開発を始める前に、以下のツールがインストールされていることを確認してください。
 
-* **OS**: Windows 10 (推奨)
 * **IDE**: [Visual Studio Code](https://code.visualstudio.com/)
 * **Node.js 管理**: [nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
 * **パッケージマネージャー**: [pnpm](https://pnpm.io/ja/installation) (v10.30.3 推奨)
