@@ -1,60 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HelloWorld from '../views/HelloWorld.vue'
+import SamplePage from '../views/SamplePage.vue'
 
-import TopPage from '../views/TopPage.vue';
-import ErrorPage from '../views/ErrorPage.vue';
-import SamplePage from '@/views/SamplePage.vue';
-import HelloWorld from '@/components/HelloWorld.vue';
-
-export enum APP_PATH {
-  ROOT = '/',
-  TOP = '/top',
-  ERROR = '/error',
-  SAMPLE_PAGE = '/sample'
-}
-
-export const SCREEN_ID = {
-  ROOT: '000',
-  TOP: '001',
-  SAMPLE_PAGE: '002',
-  ERROR: '999'
-}
+/**
+ * アプリケーション内のパス定義
+ * コンポーネント側で router.push(APP_PATH.SAMPLE) のように利用します
+ */
+export const APP_PATH = {
+  ROOT: '/',
+  SAMPLE: '/sample',
+} as const
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: APP_PATH.ROOT,
-      component: HelloWorld,
-      meta: {
-        screenId: SCREEN_ID.ROOT,
-        title: 'ルートページ'
-      }
+      name: 'home',
+      component: HelloWorld
     },
     {
-      path: APP_PATH.TOP,
-      component: TopPage,
-      meta: {
-        screenId: SCREEN_ID.TOP,
-        title: 'トップページ'
-      }
-    },
-    {
-      path: APP_PATH.ERROR,
-      component: ErrorPage,
-      meta: {
-        screenId: SCREEN_ID.ERROR,
-        title: 'エラー'
-      }
-    },
-    {
-      path: APP_PATH.SAMPLE_PAGE,
-      component: SamplePage,
-      meta: {
-        screenId: SCREEN_ID.SAMPLE_PAGE,
-        title: 'サンプルページ'
-      }
+      path: APP_PATH.SAMPLE,
+      name: 'sample',
+      component: SamplePage
     }
-  ],
+  ]
 })
 
 export default router
