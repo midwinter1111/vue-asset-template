@@ -1,17 +1,7 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { APP_PATH } from '../router'
+import { useSampleLogic } from '../composables/SamplePage.composable'
 
-const router = useRouter()
-
-const goBack = () => {
-  router.push(APP_PATH.ROOT)
-}
-
-// エラー発生用関数
-const triggerError = () => {
-  throw new Error('テスト用の意図的なエラーが発生しました。')
-}
+const { goBack, triggerError } = useSampleLogic()
 </script>
 
 <template>
